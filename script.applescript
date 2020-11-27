@@ -1,5 +1,5 @@
 on run {input, parameters}
-	
+	--Now this script is in Github
 	
 	#SELECTION DU NOM DU CLIENT DE LA RÉFÉRENCE
 	set lsresult to do shell script "find /Volumes/VIDEOS_TMP/PRODUCTION_PremierePro -mindepth 1  -maxdepth 1 -type d -exec basename {} \\; | grep -v 00_ | grep -v Corbeille | sort"
