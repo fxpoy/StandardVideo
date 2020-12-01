@@ -121,7 +121,7 @@ on run {input, parameters}
 	
 	
 	
-	display dialog "Si Premiere Pro n'est pas ouvert, l'ago effectue l'ouverture et la conexions au panneau PRODUCTION_PremierePro ainsi que l'ouverture du nouveau projet à partir du Template_" & clientName with icon note buttons {"Oui", "Non"} with title "L'application Premiere Pro est elle déja lancer"
+	display dialog "L'application Premiere Pro est elle déja lancer?" with icon note buttons {"Oui", "Non"} with title "Premiere Pro est elle déja lancer?"
 	if the button returned of the result is "Oui" then
 		
 		display dialog "Ouverture du nouveau projet Premiere Pro à partir du Template_" & clientName with icon note buttons {"Non", "Oui"} with title "Ouvrir nouveau projet Premiere Pro"
