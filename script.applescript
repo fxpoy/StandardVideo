@@ -6,8 +6,10 @@ on run {input, parameters}
 	set AppleScript's text item delimiters to {return & linefeed, return, linefeed, character id 8233, character id 8232}
 	set allClientName to (every text item in lsresult) as list
 	set clientName to choose from list allClientName with prompt "Selectionner le nom du client de la référence:"
-	
-	display dialog "nom de la variable : " & clientName
+	if clientName is false then
+		return
+	end if
+
 	
 	#CRÉATION DU DOSSIER PORTANT LE NOM DU ZIP
 	set currentFile to (item 1 of input)
