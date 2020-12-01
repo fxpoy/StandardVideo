@@ -16,7 +16,7 @@ on run {input, parameters}
 	set AppleScript's text item delimiters to {"."}
 	set NameComponents to (every text item in fileName) as list
 	set fileNameWithoutZip to (item 1 of NameComponents) as string
-	set rootNameUsers to "/Users/Marilou 1" # TO CHANGE WITH DIFFERENT COMPUTER
+	set rootNameUsers to POSIX path of (path to home folder)
 	set rootFolder to rootNameUsers & "/Downloads"
 	set pathExtractZip to (quoted form of (rootFolder & "/" & fileNameWithoutZip))
 	do shell script "mkdir -p " & pathExtractZip
