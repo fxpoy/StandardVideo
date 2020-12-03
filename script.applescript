@@ -56,7 +56,7 @@ on run {input, parameters}
 	
 	#TRIS ET DÉPLACEMENT DES FICHIERS DANS SOUS-DOSSIERS
 	do shell script "find -E " & pathExtractZip & " -regex '.*\\.(jpg|jpeg|cr2|arw|raf|rw2|pef|dng|nef|tiff|png|pdf)' -exec mv {} " & pathPhotosFolder & " \\;" #cheche les photos et les déplace dans pathPhotosFolder
-	do shell script "find -E " & pathExtractZip & " -regex '.*\\.(mov|mp4|avi|flv|wmv|mpg)' -exec mv {} " & pathVideoFolder & " \\;" #cheche les vidéos et les déplace dans pathVideoFolder
+	do shell script "find -E " & pathExtractZip & " -regex '.*\\.(mov|mp4|avi|flv|wmv|mpg|mts)' -exec mv {} " & pathVideoFolder & " \\;" #cheche les vidéos et les déplace dans pathVideoFolder
 	
 	
 	#NOTIFACTION DE FIN DU UNZIP
