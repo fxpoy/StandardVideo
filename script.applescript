@@ -64,7 +64,7 @@ on run {input, parameters}
 	
 	#TRIS ET DÉPLACEMENT DES FICHIERS DANS SOUS-DOSSIERS
 	do shell script "find -E " & pathExtractZip & " -regex '.*\\.(jpg|jpeg|cr2|arw|raf|rw2|pef|dng|nef|tiff|png|pdf)' -exec mv {} " & pathPhotosFolder & " \\;" #cheche les photos et les déplace dans pathPhotosFolder
-	do shell script "find -E " & pathExtractZip & " -regex '.*\\.(mov|mp4|avi|flv|wmv|mpg|mts)' -exec mv {} " & pathVideoFolder & " \\;" #cheche les vidéos et les déplace dans pathVideoFolder
+	do shell script "find -E " & pathExtractZip & " -regex '.*\\.(mov|MOV|mp4|MP4|avi|AVI|flv|FLV|wmv|WMV|mpg|MPG|mts|MTS)' -exec mv {} " & pathVideoFolder & " \\;" #cheche les vidéos et les déplace dans pathVideoFolder
 	
 	
 	#NOTIFACTION DE FIN DU UNZIP
@@ -126,7 +126,7 @@ on run {input, parameters}
 		set pathTemplate to pathSpecialProject & "/00_" & nameTemplate & "/" & nameTemplate & ".prproj"
 		set destinationTemplate to pathNasClientName & "/01_REFERENCES" & "/" & refid & "/01_PROJET" & "/" & refid & ".prproj"
 	end if
-	
+
 	if clientName contains lsresult then
 		set nameTemplate to "Template_" & clientName
 		set pathTemplate to pathNasClientName & "/00_" & nameTemplate & "/" & nameTemplate & ".prproj"
