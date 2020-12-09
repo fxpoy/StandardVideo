@@ -11,7 +11,7 @@ on run {input, parameters}
 	end if
 	set specialProject to "SPECIAL_PROJECT"
 	if clientName contains specialProject then
-		set lsresultSP to do shell script "find /Volumes/VIDEOS_TMP/PRODUCTION_PremierePro/SPECIAL_PROJECT/01_REFERENCES -mindepth 1  -maxdepth 1 -type d -exec basename {} \\; | grep -v 00_ | sort"
+		set lsresultSP to do shell script "find /Volumes/VIDEOS_TMP/PRODUCTION_PremierePro/SPECIAL_PROJECT/01_CLIENTS -mindepth 1  -maxdepth 1 -type d -exec basename {} \\; | grep -v 00_ | sort"
 		set allClientName to (every text item in lsresultSP) as list
 		set clientName to choose from list allClientName with prompt "Selectionner le nom du client de la référence:"
 		if clientName is false then
@@ -93,7 +93,7 @@ on run {input, parameters}
 	#CRÉATION DU DOSSIER PORTANT LE NOM DE LA RÉFÉRENCE DU SHOOT
 	set pathNasClientName to "/Volumes/VIDEOS_TMP/PRODUCTION_PremierePro" & "/" & clientName --selectionne le chemin d'accès en fonction du nom du client définie dans le diplay dialog au début du script
 	if clientName does not contain lsresult then
-		set pathNasClientName to "/Volumes/VIDEOS_TMP/PRODUCTION_PremierePro/SPECIAL_PROJECT/01_REFERENCES" & "/" & clientName
+		set pathNasClientName to "/Volumes/VIDEOS_TMP/PRODUCTION_PremierePro/SPECIAL_PROJECT/01_CLIENTS" & "/" & clientName
 	end if
 	set pathNasRefId to pathNasClientName & "/01_REFERENCES/" & refid
 	do shell script "mkdir " & pathNasRefId
