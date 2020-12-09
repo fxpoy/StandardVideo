@@ -118,7 +118,7 @@ on run {input, parameters}
 	
 	
 	#CRÉATION DU FICHIER PROJET PREMIERE PREMIERE PRO EN FONCTION DU TEMPLATE
-	set nameTemplate to "Template_" & clientName
+	
 	
 	if clientName does not contain lsresult then
 		set nameTemplate to "Template_SPECIAL_PROJECT"
@@ -127,8 +127,11 @@ on run {input, parameters}
 		set destinationTemplate to pathNasClientName & "/01_REFERENCES" & "/" & refid & "/01_PROJET" & "/" & refid & ".prproj"
 	end if
 	
-	set pathTemplate to pathNasClientName & "/00_" & nameTemplate & "/" & nameTemplate & ".prproj"
-	set destinationTemplate to pathNasClientName & "/01_REFERENCES" & "/" & refid & "/01_PROJET" & "/" & refid & ".prproj"
+	if clientName contains lsresult then
+		set nameTemplate to "Template_" & clientName
+		set pathTemplate to pathNasClientName & "/00_" & nameTemplate & "/" & nameTemplate & ".prproj"
+		set destinationTemplate to pathNasClientName & "/01_REFERENCES" & "/" & refid & "/01_PROJET" & "/" & refid & ".prproj"
+	end if
 	do shell script "cp " & (quoted form of pathTemplate) & " " & (quoted form of destinationTemplate)
 	
 	
