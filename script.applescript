@@ -12,9 +12,9 @@ on run {input, parameters}
 	set specialProject to "SPECIAL_PROJECT"
 	if clientName contains specialProject then
 		set lsresultSP to do shell script "find /Volumes/VIDEOS_TMP/PRODUCTION_PremierePro/SPECIAL_PROJECT/01_REFERENCES -mindepth 1  -maxdepth 1 -type d -exec basename {} \\; | grep -v 00_ | sort"
-		set allSpecialProjectClientName to (every text item in lsresultSP) as list
-		set specialProjectClientName to choose from list allSpecialProjectClientName with prompt "Selectionner le nom du client de la référence:"
-		if specialProjectClientName is false then
+		set allClientName to (every text item in lsresultSP) as list
+		set clientName to choose from list allSpecialProjectClientName with prompt "Selectionner le nom du client de la référence:"
+		if clientName is false then
 			return
 		end if
 	end if
