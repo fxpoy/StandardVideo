@@ -9,7 +9,7 @@ on run {input, parameters}
 	if clientName is false then
 		return
 	end if
-	if clientName is SPECIAL "PROJECT" then
+	if clientName is "SPECIAL PROJECT" then
 		set lsresultSP to do shell script "find /Volumes/VIDEOS_TMP/PRODUCTION_PremierePro/SPECIAL_Project/01_REFERENCES -mindepth 1  -maxdepth 1 -type d -exec basename {} \\; | grep -v 00_ | sort"
 		set AppleScript's text item delimiters to {return & linefeed, return, linefeed, character id 8233, character id 8232
 		set allSpecialProjectClientName to (every text item in lsresult) as list
