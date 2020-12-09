@@ -12,7 +12,6 @@ on run {input, parameters}
 	set specialProject to "SPECIAL PROJECT"
 	if clientName contains specialProject then
 		set lsresultSP to do shell script "find /Volumes/VIDEOS_TMP/PRODUCTION_PremierePro/SPECIAL_Project/01_REFERENCES -mindepth 1  -maxdepth 1 -type d -exec basename {} \\; | grep -v 00_ | sort"
-		set AppleScript's text item delimiters to {return & linefeed, return, linefeed, character id 8233, character id 8232
 		set allSpecialProjectClientName to (every text item in lsresult) as list
 		set specialProjectClientName to choose from list allSpecialProjectClientName with prompt "Selectionner le nom du client de la référence:"
 	end if
