@@ -94,9 +94,9 @@ on run {input, parameters}
 	if clientName contains lsresult then
 		set pathNasClientName to "/Volumes/VIDEOS_TMP/PRODUCTION_PremierePro" & "/" & clientName --selectionne le chemin d'accès en fonction du nom du client définie dans le diplay dialog au début du script
 	end if
-	if clientName does not contain lsresult then
-		set pathNasClientName to "/Volumes/VIDEOS_TMP/PRODUCTION_PremierePro/SPECIAL_PROJECT/01_CLIENTS" & "/" & clientName
-	end if
+	--if clientName contains specialProject then
+	--	set pathNasClientName to "/Volumes/VIDEOS_TMP/PRODUCTION_PremierePro/SPECIAL_PROJECT/01_CLIENTS" & "/" & clientName
+	--end if
 	set pathNasRefId to pathNasClientName & "/01_REFERENCES/" & refid
 	do shell script "mkdir " & pathNasRefId
 	
@@ -122,12 +122,12 @@ on run {input, parameters}
 	#CRÉATION DU FICHIER PROJET PREMIERE PREMIERE PRO EN FONCTION DU TEMPLATE
 	
 	
-	if clientName does not contain lsresult then
-		set nameTemplate to "Template_SPECIAL_PROJECT"
-		set pathSpecialProject to "/Volumes/VIDEOS_TMP/PRODUCTION_PremierePro/SPECIAL_PROJECT"
-		set pathTemplate to pathSpecialProject & "/00_" & nameTemplate & "/" & nameTemplate & ".prproj"
-		set destinationTemplate to pathNasClientName & "/01_REFERENCES" & "/" & refid & "/01_PROJET" & "/" & refid & ".prproj"
-	end if
+	--if clientName contains specialProject then
+	--	set nameTemplate to "Template_SPECIAL_PROJECT"
+	--	set pathSpecialProject to "/Volumes/VIDEOS_TMP/PRODUCTION_PremierePro/SPECIAL_PROJECT"
+	--	set pathTemplate to pathSpecialProject & "/00_" & nameTemplate & "/" & nameTemplate & ".prproj"
+	--	set destinationTemplate to pathNasClientName & "/01_REFERENCES" & "/" & refid & "/01_PROJET" & "/" & refid & ".prproj"
+	--end if
 
 	if clientName contains lsresult then
 		set nameTemplate to "Template_" & clientName
