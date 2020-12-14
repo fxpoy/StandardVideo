@@ -91,9 +91,9 @@ on run {input, parameters}
 	
 	
 	#CRÉATION DU DOSSIER PORTANT LE NOM DE LA RÉFÉRENCE DU SHOOT
-	if clientName contains (item of lsresult) then
+	
 		set pathNasClientName to "/Volumes/VIDEOS_TMP/PRODUCTION_PremierePro" & "/" & clientName --selectionne le chemin d'accès en fonction du nom du client définie dans le diplay dialog au début du script
-	end if
+	
 	--if clientName contains specialProject then
 	--	set pathNasClientName to "/Volumes/VIDEOS_TMP/PRODUCTION_PremierePro/SPECIAL_PROJECT/01_CLIENTS" & "/" & clientName
 	--end if
@@ -128,12 +128,11 @@ on run {input, parameters}
 	--	set pathTemplate to pathSpecialProject & "/00_" & nameTemplate & "/" & nameTemplate & ".prproj"
 	--	set destinationTemplate to pathNasClientName & "/01_REFERENCES" & "/" & refid & "/01_PROJET" & "/" & refid & ".prproj"
 	--end if
-
-	if clientName contains lsresult then
+	
 		set nameTemplate to "Template_" & clientName
 		set pathTemplate to pathNasClientName & "/00_" & nameTemplate & "/" & nameTemplate & ".prproj"
 		set destinationTemplate to pathNasClientName & "/01_REFERENCES" & "/" & refid & "/01_PROJET" & "/" & refid & ".prproj"
-	end if
+
 	do shell script "cp " & (quoted form of pathTemplate) & " " & (quoted form of destinationTemplate)
 	
 	
