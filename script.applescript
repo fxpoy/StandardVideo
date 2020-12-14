@@ -91,7 +91,7 @@ on run {input, parameters}
 	
 	
 	#CRÉATION DU DOSSIER PORTANT LE NOM DE LA RÉFÉRENCE DU SHOOT
-	if clientName contains lsresult then
+	if clientName contains (contents of lsresult) then
 		set pathNasClientName to "/Volumes/VIDEOS_TMP/PRODUCTION_PremierePro" & "/" & clientName --selectionne le chemin d'accès en fonction du nom du client définie dans le diplay dialog au début du script
 	end if
 	--if clientName contains specialProject then
