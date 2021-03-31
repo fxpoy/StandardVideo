@@ -173,7 +173,7 @@ on run {input, parameters}
 	
 	
 	#LANCEMENT DE L'APPLICATION PREMIERE PRO ET OUVERTURE AUTOMATIQUE DU PANNEAU PRODUCTION
-	set appname to "Adobe Premiere Pro 2020"
+	set appname to "Adobe Premiere Pro 2021"
 	tell application appname to launch
 	
 	
